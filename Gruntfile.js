@@ -30,18 +30,25 @@ module.exports = function(grunt) {
         },
         files: [{
            expand: true,
-           src: ['**/*.{png,jpg,gif}'],
+           src: ['**/*.{png,jpg,gif}', '!node_modules/**/*.{png,jpg,gif}'],
            dest: 'dist/',
            rename: function(dest, src) {return '' + src; }
         }]
      }
+    },
+
+    imageoptim: {
+      myTask: {
+        src: ['views/images/', 'img/']
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-imageoptim');
   
-  grunt.registerTask('default', ['uglify', 'cssmin', 'imagemin']);
+  grunt.registerTask('default', ['uglify', 'cssmin', 'imagemin', 'imageoptim']);
 
 };
