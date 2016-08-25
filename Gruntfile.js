@@ -67,14 +67,19 @@ module.exports = function(grunt) {
         options: {
           engine: 'im',
           sizes: [{
-              width: 400,
+              height: 400,
               suffix: "",
               quality: 60
+            },{
+              height: 100,
+              width: 100,
+              suffix: "",
+              quality: 80
             }]
         },
         files: [{
           expand: true,
-          src: ['images/pizzeria.jpg'],
+          src: ['images/pizzeria.jpg','images/pizza.png'],
           cwd: 'views/',
           dest: 'views/'
         }]
