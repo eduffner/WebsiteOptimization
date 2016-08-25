@@ -41,6 +41,16 @@ module.exports = function(grunt) {
       myTask: {
         src: ['views/images/', 'img/']
       }
+    },
+
+    inlinecss: {
+        main: {
+            options: {
+            },
+            files: {
+                'index.html': 'index.html'
+            }
+        }
     }
   });
 
@@ -48,7 +58,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-imageoptim');
+  grunt.loadNpmTasks('grunt-inline-css');
   
-  grunt.registerTask('default', ['uglify', 'cssmin', 'imagemin', 'imageoptim']);
+  grunt.registerTask('default', ['uglify', 'cssmin', 'imagemin', 'imageoptim', 'inlinecss']);
 
 };
