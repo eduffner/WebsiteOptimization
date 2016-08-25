@@ -53,12 +53,30 @@ module.exports = function(grunt) {
         }
     },
 
-    cacheBust: {
-      taskName: {
-          options: {
-              assets: ['views/images/pizzeria.jpg']
-          },
-          src: ['index.html']
+    // cacheBust: {
+    //   taskName: {
+    //       options: {
+    //           assets: ['views/images/pizzeria.jpg']
+    //       },
+    //       src: ['index.html']
+    //   }
+    // }, 
+
+    responsive_images: {
+      dev: {
+        options: {
+          engine: 'im',
+          sizes: [{
+              width: 400,
+              suffix: "",
+              quality: 60
+            }]
+        },
+        files: [{
+          expand: true,
+          src: ['views/images/pizzeria.jpg'],
+          dest: 'views/images/'
+        }]
       }
     }
   });
@@ -69,7 +87,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-imageoptim');
   grunt.loadNpmTasks('grunt-inline-css');
   grunt.loadNpmTasks('grunt-cache-bust');
+  grunt.loadNpmTasks('grunt-responsive-images');
   
-  grunt.registerTask('default', ['uglify', 'cssmin', 'imagemin', 'imageoptim', 'inlinecss', 'cacheBust']);
+  grunt.registerTask('default', ['uglify', 'cssmin', 'imagemin', 'imageoptim', 'inlinecss', /*'cacheBust',*/'responsive_images']);
 
 };

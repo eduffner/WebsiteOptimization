@@ -8,6 +8,7 @@
     "grunt-contrib-imagemin": "^1.0.1",
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-imageoptim": "^1.4.1",
-    "grunt-inline-css": "^0.1.5"
+    "grunt-inline-css": "^0.1.5",
+    "grunt-responsive-images": "^0.1.9"
   }
 }
