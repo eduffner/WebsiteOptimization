@@ -21,12 +21,27 @@ module.exports = function(grunt) {
           rename: function(dest, src) { return '' + src.replace('.css', '.min.css'); }
         }]
       }
+    },
+
+    imagemin: {
+     dist: {
+        options: {
+          optimizationLevel: 5
+        },
+        files: [{
+           expand: true,
+           src: ['**/*.{png,jpg,gif}'],
+           dest: 'dist/',
+           rename: function(dest, src) {return '' + src; }
+        }]
+     }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
   
-  grunt.registerTask('default', ['uglify', 'cssmin']);
+  grunt.registerTask('default', ['uglify', 'cssmin', 'imagemin']);
 
 };
