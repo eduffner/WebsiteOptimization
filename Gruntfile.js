@@ -51,6 +51,15 @@ module.exports = function(grunt) {
                 'index.html': 'index.html'
             }
         }
+    },
+
+    cacheBust: {
+      taskName: {
+          options: {
+              assets: ['views/images/pizzeria.jpg']
+          },
+          src: ['index.html']
+      }
     }
   });
 
@@ -59,7 +68,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-imageoptim');
   grunt.loadNpmTasks('grunt-inline-css');
+  grunt.loadNpmTasks('grunt-cache-bust');
   
-  grunt.registerTask('default', ['uglify', 'cssmin', 'imagemin', 'imageoptim', 'inlinecss']);
+  grunt.registerTask('default', ['uglify', 'cssmin', 'imagemin', 'imageoptim', 'inlinecss', 'cacheBust']);
 
 };
