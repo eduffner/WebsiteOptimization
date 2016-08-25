@@ -74,8 +74,9 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          src: ['views/images/pizzeria.jpg'],
-          dest: 'views/images/'
+          src: ['images/pizzeria.jpg'],
+          cwd: 'views/',
+          dest: 'views/'
         }]
       }
     }
