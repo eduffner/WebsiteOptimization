@@ -1,6 +1,6 @@
 ## Website Performance Optimization portfolio project
 
-###Part 1: Optimize PageSpeed Insights score for index.html
+### Part 1: Optimize PageSpeed Insights score for index.html
 
 #### Hosted on GitHub
 
@@ -10,7 +10,7 @@ I used git hub to host the [project](https://eduffner.github.io/WebsiteOptimizat
 
 I downloaded grunt to my project and created a Gruntfile.js to start my optimizations. I then optimized the images using imageoptim and responsive images. I minified css and js and then I inlined it.
 
-###Part 2: Optimize Frames per Second in pizza.html
+### Part 2: Optimize Frames per Second in pizza.html
 
 #### Optimized pizza slider loop
 
